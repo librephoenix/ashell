@@ -41,6 +41,7 @@ fn get_workspaces(enable_workspace_filling: bool) -> Vec<Workspace> {
     let mut workspaces = hyprland::data::Workspaces::get()
         .map(|w| w.to_vec())
         .unwrap_or_default();
+    workspaces.retain(|&w| w.id > 0);
 
     workspaces.sort_by_key(|w| w.id);
 
