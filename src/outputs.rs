@@ -58,7 +58,7 @@ impl Outputs {
             id,
             size: Some((None, Some(HEIGHT))),
             layer: Layer::Bottom,
-	    namespace: "ashell",
+	    namespace: String::from("ashell"),
             pointer_interactivity: true,
             keyboard_interactivity: KeyboardInteractivity::None,
             exclusive_zone: HEIGHT as i32,
@@ -78,7 +78,7 @@ impl Outputs {
             id: menu_id,
             size: Some((None, None)),
             layer: Layer::Background,
-	    namespace: "ashell",
+	    namespace: String::from("ashell"),
             pointer_interactivity: true,
             keyboard_interactivity: KeyboardInteractivity::None,
             output: wl_output.map_or(IcedOutput::Active, |wl_output| {
